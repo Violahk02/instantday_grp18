@@ -5,15 +5,17 @@ const Htmlheading = htmlheading;
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
-"large": "text-5xl lg:text-7xl",
-"medium": "text-2xl lg:text-text-5xl",
-"small": "text-sm lg:text-lg",
+"xl-large": "text-7xl lg:text-9xl text-ashy-black",
+"large": "text-5xl lg:text-7xl text-ashy-black",
+"medium": "text-2xl lg:text-5xl text-ashy-black",
+"small": "text-sm lg:text-lg text-ashy-black",
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige skrifttyper.
 const fontClasses = {
-"lilita-one": "font-display",
-"open-sans": "font-sans",
+  "lilita-one": "font-display",
+  "open-sans": "font-sans",
 };
+
 ---
-<Htmlheading class:list={[stylingclasses, sizeClasses[size], fontClasses[font]]}><slot /></Htmlheading>
+<Htmlheading class:list={[sizeClasses[size], fontClasses[font], stylingclasses]}><slot /></Htmlheading>
