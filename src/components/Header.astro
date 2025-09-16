@@ -7,13 +7,13 @@ const currentPath = pathname.slice(1); // remove the first "/"
         
         <nav id="desktopmenu" class="hidden lg:block ">
             <ul class="flex flex-row gap-4 items-center">
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class={currentPath === "" ? "" : ""}>Homepage</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Share your instant</a></li>
+                <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class={currentPath === "" ? "" : ""}>Homepage</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+                <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Share your instant</a></li>
                 <div id="logo" class=" px-8">
             <img src="/logo.svg" alt="logo">
         </div>
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Winners & nominees</a></li>
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Info</a></li>
+                <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Winners & nominees</a></li>
+                <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Info</a></li>
             </ul>
         </nav>
         <div id="logo" class="lg:hidden px-8">

@@ -1,0 +1,67 @@
+---
+const { date = "2025-10-18T10:00:00+02:00" } = Astro.props;
+---
+<section id="countdown"
+         data-date={date}
+         class="flex flex-wrap items-end justify-center gap-10 sm:gap-14 md:gap-20 text-ashy-black"
+         aria-live="polite">
+  <div class="text-center">
+    <div class="tabular-nums font-black text-6xl lg:text-8xl tracking-tight font-display">
+      <span data-unit="days">00</span>
+    </div>
+    <div class="text-2xl md:text-3xl font-display"><span data-label="days">days</span></div>
+  </div>
+  <div class="text-center">
+    <div class="tabular-nums font-black text-6xl lg:text-8xl tracking-tight font-display">
+      <span data-unit="hours">00</span>
+    </div>
+    <div class="text-2xl md:text-3xl font-display"><span data-label="hours">hours</span></div>
+  </div>
+  <div class="text-center">
+    <div class="tabular-nums font-black text-6xl lg:text-8xl tracking-tight font-display">
+      <span data-unit="minutes">00</span>
+    </div>
+    <div class="text-2xl md:text-3xl font-display"><span data-label="minutes">minutes</span></div>
+  </div>
+  <div class="text-center">
+    <div class="tabular-nums font-black text-6xl lg:text-8xl tracking-tight font-display">
+      <span data-unit="seconds">00</span>
+    </div>
+    <div class="text-2xl md:text-3xl font-display"><span data-label="seconds">seconds</span></div>
+  </div>
+</section>
+
+<script>
+  const root = document.getElementById("countdown");
+  const target = new Date(root.dataset.date);
+  const units = ["days", "hours", "minutes", "seconds"];
+  const els = Object.fromEntries(units.map(u => [u, root.querySelector(`[data-unit="${u}"]`)]));
+  const labels = Object.fromEntries(units.map(u => [u, root.querySelector(`[data-label="${u}"]`)]));
+  const singular = { days: "day", hours: "hour", minutes: "minute", seconds: "second" };
+
+  function update() {
+    const now = new Date();
+    let diff = Math.max(0, target - now);
+
+    const d = Math.floor(diff / 86400000); diff %= 86400000;
+    const h = Math.floor(diff / 3600000);  diff %= 3600000;
+    const m = Math.floor(diff / 60000);    diff %= 60000;
+    const s = Math.floor(diff / 1000);
+
+    els.days.textContent    = String(d).padStart(2, "0");
+    els.hours.textContent   = String(h).padStart(2, "0");
+    els.minutes.textContent = String(m).padStart(2, "0");
+    els.seconds.textContent = String(s).padStart(2, "0");
+
+    labels.days.textContent    = d === 1 ? singular.days    : "days";
+    labels.hours.textContent   = h === 1 ? singular.hours   : "hours";
+    labels.minutes.textContent = m === 1 ? singular.minutes : "minutes";
+    labels.seconds.textContent = s === 1 ? singular.seconds : "seconds";
+  }
+
+  update();
+  const t = setInterval(() => {
+    update();
+    if (new Date() >= target) clearInterval(t);
+  }, 1000);
+</script>

@@ -5,7 +5,7 @@ const { teksttype="brødtekst", stylingclasses=""} = Astro.props;
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
 "konsultativ": "",
-"brødtekst": "text-ashy-black font-open-sans text-sm lg:text-lg",
+"brødtekst": " p-6 text-ashy-black font-open-sans text-sm lg:text-lg",
 };
 ---
 <p class:list={[sizeClasses[teksttype], stylingclasses]}><slot /></p>
