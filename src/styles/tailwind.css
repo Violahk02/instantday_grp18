@@ -22,8 +22,10 @@
 
 
   /*Typografi */
-  --font-lilita-one: 'Lilita One', sans-serif;
-  --font-open-sans: 'Open sans', sans-serif;
+  --font-display: 'Lilita One', sans-serif;
+  --font-sans: 'Open Sans', sans-serif;
+
+
 }
 
 @layer base {
