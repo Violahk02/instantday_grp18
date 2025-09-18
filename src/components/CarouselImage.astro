@@ -1,0 +1,56 @@
+---
+// Props: src = billedstien, alt = alternativ tekst
+const { src, alt } = Astro.props;
+---
+
+<div class="flex-shrink-0 rounded-lg overflow-hidden border border-[#4F5873] inline-flex">
+  <img 
+    src={src} 
+    alt={alt} 
+    class="h-auto max-h-80 object-contain hover:scale-105 transition-transform" 
+  />
+</div>
+
+
+
+<style>
+  /* Tailwind-compatible marquee animation */
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    animation: marquee 28s linear infinite;
+  }
+</style>
+
+<script>
+document.querySelectorAll(".carousel").forEach(carousel => {
+  let scrollSpeed = 1;
+  let animation;
+
+  function step() {
+    carousel.scrollLeft += scrollSpeed;
+    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+      carousel.scrollLeft = 0;
+    }
+    animation = requestAnimationFrame(step);
+  }
+
+  function startScrolling() {
+    if (!animation) animation = requestAnimationFrame(step);
+  }
+
+  function stopScrolling() {
+    cancelAnimationFrame(animation);
+    animation = null;
+  }
+
+  carousel.addEventListener("mouseenter", stopScrolling);
+  carousel.addEventListener("mouseleave", startScrolling);
+
+  startScrolling();
+});
+</script>

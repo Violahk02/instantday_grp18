@@ -1,0 +1,116 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+import CarouselImage from '../components/CarouselImage.astro';
+
+---
+
+<MainLayout title="winner">
+	<main class="container mx-auto p-4">
+<section class="bg-[url('/winner_img/bg-winner.webp')] bg-cover bg-center ">
+    
+    <img src="polaroid" alt="">
+    <img src="" alt="">
+    <div class="bg-black/50 m-5">
+        <div class="flex flex-row">
+            <div class="m-7 ">
+		        <Heading htmlheading="h1" size="medium" font="lilita-one" stylingclasses="text-white">WINNERS</Heading>
+            <Heading htmlheading="h1" size="medium" font="lilita-one" stylingclasses="text-white">AND</Heading>
+            <Heading htmlheading="h1" size="medium" font="lilita-one" stylingclasses="text-white">NOMINEES</Heading>
+            <Heading htmlheading="h1" size="medium" font="lilita-one" stylingclasses="text-white">2025</Heading>
+          
+        </div>
+        <div class="m-auto">
+            <img src="/winner_img/crown.png" alt="crown">
+        </div>
+    </div>  
+    <Text  stylingclasses="text-white">
+        Instant Day was quite a success with more than 100 contributions. So it was difficult to find a winner. After a couple of long but exciting days, the judges agreed on the winner and the 10 nominees.
+    </Text>
+        <Text stylingclasses="text-white" >We’re deeply grateful to everyone who joined us in celebrating Instant Day. Your support, creativity, and enthusiasm made this event TRULY special.
+To our winners and nominees - you’ve inspired us with your talent and dedication. 
+Thank you for being part of this journey and for making Instant Day unforgettable!</Text>
+        
+  
+</div>
+</section>
+<section class="lg:grid grid-cols-2 pt-18 pb-18">
+    <div>
+        <img src="/winner_img/crown-winner.webp" alt="the winner" class="mb-auto intersectionobserver:animate-fade-left animate-once animate-duration-[800ms] animate-ease-linear">
+    </div>
+    <div>
+        <div class="ml-5">
+        <Heading htmlheading="h2" size="medium" font="lilita-one">WINNER - “Banana Crew”  </Heading>
+        </div>
+        <Text>
+            This unforgettable submission captures the true spirit of Instant Day: playful, spontaneous, and full of analogue charm. Dressed in banana costumes, the team transformed an ordinary street moment into a snapshot of pure joy.
+        </Text>
+        <Text>
+            The judges were impressed by the creativity and humor, as well as the way the photo celebrates instant photography’s ability to capture real life without filters or pretension.
+        </Text>
+        <Text>
+            “This photo reminds us that instant photography is about having fun and celebrating the moment together. It’s impossible not to smile when you see it.”
+        </Text>
+    </div>
+</section>
+
+<section class="w-screen overflow-hidden relative">
+  <!-- Rotated wrapper with negative margins to remove gaps -->
+  <div class="rotate-5 origin-top-left -ml-12 -mr-12">
+    
+    <!-- Scrolling Heading -->
+    <div class="overflow-hidden">
+      <h1 class="animate-marquee whitespace-nowrap text-3xl font-bold font-lilita-one">
+        NOMINEES NOMINEES NOMINEES NOMINEES NOMINEES NOMINEES NOMINEES NOMINEES
+      </h1>
+    </div>
+
+    <!-- First Carousel -->
+    <div class="overflow-hidden mt-4">
+      <div class="carousel flex overflow-x-auto space-x-4 px-6 scrollbar-hide">
+        <CarouselImage src="/winner_img/beer-guy.webp" alt="beer guy" />
+        <CarouselImage src="/winner_img/the-king.webp" alt="the king" />
+        <CarouselImage src="/winner_img/the-dance.webp" alt="the dance" />
+        <CarouselImage src="/winner_img/redbull.webp" alt="redbull" />
+        <CarouselImage src="/winner_img/redbull.webp" alt="redbull" />
+        <CarouselImage src="/winner_img/beer-guy.webp" alt="beer guy" />
+        <CarouselImage src="/winner_img/the-king.webp" alt="the king" />
+        <CarouselImage src="/winner_img/the-dance.webp" alt="the dance" />
+        <CarouselImage src="/winner_img/redbull.webp" alt="redbull" />
+        <CarouselImage src="/winner_img/redbull.webp" alt="redbull" />
+      </div>
+    </div>
+
+    <!-- Second Carousel -->
+    <div class="overflow-hidden mt-4">
+      <div class="carousel flex overflow-x-auto space-x-4 px-6 scrollbar-hide">
+        <CarouselImage src="/winner_img/alko.webp" alt="alko" />
+        <CarouselImage src="/winner_img/redbull-crowd.webp" alt="redbull crowd" />
+        <CarouselImage src="/winner_img/wonder.webp" alt="wonder" />
+        <CarouselImage src="/winner_img/cityvibe.webp" alt="cityvibe" />
+        <CarouselImage src="/winner_img/crowd.webp" alt="crowd" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  /* Tailwind-compatible marquee animation */
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    animation: marquee 28s linear infinite;
+  }
+</style>
+	</main>
+</MainLayout>
+
