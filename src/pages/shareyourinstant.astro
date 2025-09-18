@@ -1,0 +1,67 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+import Countdown from "../components/Countdown.astro";
+import Header from "../components/Header.astro";
+const target = "2025-10-18T00:00:00+02:00";
+---
+<MainLayout title="Share your instant">
+    <Heading htmlheading="h2" size="large" font="lilita-one" stylingclasses="text-center mt-20 mb-10">Share your instant</Heading>
+    <form class="[&>div]:py-4 m-10 p-8 w-3xl mx-auto"> 
+    
+        <div class="">
+            <label class="text-blue-500 font-semibold" for="text">Full Name:</label>
+            <div class="flex flex-row gap-4">
+                <input class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic" type="text" id="name" placeholder="First Name">
+                <input class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic" type="text" id="name" placeholder="Surname">
+            </div>
+        </div>
+        <div class="">
+            <label class="text-blue-500 font-semibold" for="text">Email:</label>
+            <input class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic" type="text" id="name" placeholder="Email.contact@gmail.com">
+        </div>
+        <div class="col-span-full">
+          <label for="cover-photo" class="block text-sm/6 font-medium text-gray-900">Cover photo</label>
+          <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+            <div class="text-center">
+              <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-12 text-gray-300">
+                <path d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+              <div class="mt-4 flex text-sm/6 text-gray-600">
+                <label for="file-upload" class="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-600 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-600 hover:text-indigo-500">
+                  <span>Upload a file</span>
+                  <input id="file-upload" type="file" name="file-upload" class="sr-only" />
+                </label>
+                <p class="pl-1">or drag and drop</p>
+              </div>
+              <p class="text-xs/5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="">
+            <label class="text-blue-500 font-semibold" for="text">Submission title:</label>
+            <input  class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic"type="text" id="email" placeholder="Big weapon on a helmet?">
+        </div>
+         <div class="col-span-full">
+          <label for="about" class="block text-sm/6 font-medium text-gray-900">Submission Description</label>
+          <div class="mt-2">
+            <textarea id="about" name="about" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+          </div>
+        </div>
+        <div class="">
+            <input class="rounded border-blue-500 text-blue-500 shadow-sm focus:border-blue-500 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" id="nyhedsbrev">
+            <span>I agree to our</span>
+            <Link href="" variant="textlink" size="medium"> terms and conditions</Link>
+        </div>
+        <div class="">
+            <Link variant="primary" size="small">Submit</Link>
+        </div>
+    </form>
+</MainLayout>

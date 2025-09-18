@@ -7,107 +7,137 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Countdown from "../components/Countdown.astro";
+import Header from "../components/Header.astro";
 const target = "2025-10-18T00:00:00+02:00";
 ---
-<MainLayout title="Titel">
-	<section class="mb-10 flex flex-col items-center text-center  mx-auto justify-center">
-		<Heading htmlheading="h1" size="xl-large" font="lilita-one">Celebrate the instant</Heading>
-		<Text stylingclasses="max-w-3xl">October 18 is Instant Day – a global celebration of instant photography. Grab your Polaroid, Instax or favorite instant camera and join the fun. It’s not a competition, but a homage to analogue snapshots – with a prize for one lucky participant!</Text>
-		<Countdown date={target} />
-		<div class="mt-18">
-		<Button size="large" variant="primary">SAVE THE DATE</Button>
+<MainLayout title="Homepage">
+	<section class="lg:mb-30 lg:mt-20 mt-10 mb-20 flex flex-col items-center text-center  mx-auto justify-center ">
+			<Heading htmlheading="h1" size="xl-large" font="lilita-one">CELEBRATE THE INSTANT</Heading>
+			<Text stylingclasses="max-w-3xl">October 18 is Instant Day – a global celebration of instant photography. Grab your Polaroid, Instax or favorite instant camera and join the fun. It’s not a competition, but a homage to analogue snapshots – with a prize for one lucky participant!</Text>
+		<div class="m-3">
+			<Countdown date={target} />
 		</div>
+		<div class="mt-18">
+			<Link href="" size="large" target="_blank" variant="primary">SAVE THE DATE</Link>
+		</div>
+		<div class="relative h-[200px] w-full"> <!-- giv altid en højde -->
+    <!-- Edwin -->
+    <img
+      src="/forside_img/edwin_hero.svg"
+      class="absolute lg:left-[0%] lg:bottom-[50%] lg:w-[25%] left-[0%] bottom-[0%] w-[40%] animate-wiggle animate-infinite animate-duration-[3000ms]"
+      alt=""
+    />
+    <!-- Kamera -->
+    <img
+      src="/forside_img/camera_hero.svg"
+      class="absolute lg:right-[0%] lg:bottom-[50%] lg:w-[25%] right-[0%] bottom-[%] w-[40%] animate-wiggle animate-infinite animate-duration-[3000ms]"
+      alt=""
+    />
+  </div>
 	</section>
 	<div >
 		<Heading htmlheading="h2" size="medium" font="lilita-one" stylingclasses="text-left pl-6 lg:pl-18">Why Instant photography</Heading>
 	</div>
 <section class="snap-x snap-mandatory overflow-x-scroll flex flex-row mt-10 lg:pl-12 mb-8">
-	<div class="snap-center  min-w-full lg:min-w-[500px]">
+	<div class="snap-center  min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<Text >A 3-year-old girl asked her father why she couldn’t see the picture right away, and the idea of instant photography was born.</Text>
 		<img src="/forside_img/edwin_daughter.svg" class="" alt="">
 	</div>
-	<div class="snap-center min-w-full lg:min-w-[500px]">
+	<div class="snap-center min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<img src="/forside_img/edwin_mission.svg" class="" alt="">
 		<Text >Her father, Edwin Land, sets out to invent instant photography.</Text>
 	</div>
-	<div class="snap-center min-w-full lg:min-w-[500px]">
+	<div class="snap-center min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<Text >Instant photography is introduced, and the Polaroid brand is established.</Text>
 		<img src="/forside_img/first_launch.svg" class="" alt="">
 	</div>
-	<div class="snap-center min-w-full lg:min-w-[500px]">
+	<div class="snap-center min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<img src="/forside_img/golden_era.svg" class="" alt="">
 		<Text >Polaroid cameras become a cultural phenomenon – everyone has one.</Text>
 	</div>
-	<div class="snap-center min-w-full lg:min-w-[500px]">
+	<div class="snap-center min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<Text >Digital photography takes over, and instant photography nearly disappears.</Text>
 		<img src="/forside_img/forgotten.svg" class="" alt="">
 	</div>
-	<div class="snap-center min-w-full lg:min-w-[500px]">
+	<div class="snap-center min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<img src="/forside_img/comeback.svg" class="" alt="">
 		<Text >Polaroid cameras become a cultural phenomenon – everyone has one.</Text>
 	</div>
-	<div class="snap-center min-w-full lg:min-w-[500px]">
+	<div class="snap-center min-w-full lg:min-w-[500px] intersect:animate-fade-left">
 		<Text >Instant Day is our way of celebrating life, creativity, and the magic of instant memories.</Text>
 		<img src="/forside_img/celebration.svg" class="" alt="">
 	</div>
-</section> 
-<section class="bg-orange p-10 -rotate-7 lg:py-20">
+</section>
+<div class="relative overflow-hidden ">
+<section class="bg-orange p-10 p-10 lg:py-20">
 	<Heading htmlheading="h2" size="large" font="lilita-one" stylingclasses="text-center text-white">Got an instant photo ready for the public?</Heading>
 </section>
+</div>
 <section class="bg-karton pt-20 p-10 flex flex-col justify-center gap-8 pt-20 pb-20">
 	<Heading htmlheading="h2" size="medium" font="lilita-one" stylingclasses="text-center pt-18 pb-14">Heres how to participate</Heading>
-	<div class="lg:grid grid-cols-2 container mx-auto gap-18">
-		<div class="">
-			<img src="/forside_img/no_1.svg" alt="nr 1">
+	<div class="lg:grid lg:grid-cols-2 lg:pb-20  container mx-auto gap-18 grid grid-cols-1">
+		<div class="intersect:animate-fade-right">
+			
+				<img src="/forside_img/no_1.svg" class="scale-130 lg:scale-150" class="items-center" alt="nr 1" >
 			<Text>Take a photo of your instant with your smartphone or scan it for max. quality.</Text>
-			<img src="/forside_img/phone_pictures.svg" class="mx-auto lg:scale-150 pr-12" alt="">
+			<img src="/forside_img/phone_pictures.svg" class="mx-auto lg:scale-150 pr-12 animate-wiggle animate-infinite animate-duration-3000 animate-ease-linear" alt="">
+			
 		</div>
-		<div class="lg:mt-22">
-			<img src="/forside_img/no_2.svg" alt="nr 2">
+
+		<div class="lg:mt-22 intersect:animate-fade-left">
+			<img src="/forside_img/no_2.svg" class=" scale-130 lg:scale-150" alt="nr 2">
+			<div class="flex flex row items-center">
 			<Text>Upload your photo and credentials on</Text>
+			 <Link href="" variant="textlink" size="medium"> Share your instant</Link> 
+			 </div>
 			<img src="/forside_img/cloud_picture.svg" class="mx-auto lg:scale-150 pt-16" alt="cloud">
 		</div>
-		<div class="">
-			<img src="/forside_img/no_3.svg" alt="nr 2">
-			<Text>Agree to our</Text>
+
+		<div class="intersect:animate-fade-right">
+			<img src="/forside_img/no_3.svg" class="scale-130 lg:scale-150" alt="nr 2">
+			<div class="flex flex row items-center">
+				<Text>Agree to our</Text>
+				<Link href="" variant="textlink" size="medium"> terms and conditions</Link>
+			</div>
 			<img src="/forside_img/terms_condi.svg" class="mx-auto lg:scale-150 pt-16 pr-16" alt="terms and conditions">
 		</div>
-		<div class="lg:mt-22">
-			<img src="/forside_img/no_4.svg" alt="nr 3">
+		
+		<div class="lg:mt-22 intersect:animate-fade-left">
+			<img src="/forside_img/no_4.svg" class="scale-130 lg:scale-150" alt="nr 3">
 			<Text>You can make up to 5 submissions - go through step 1-3 for each submission ;-)</Text>
 			<img src="/forside_img/5x_pictures.svg" class="mx-auto lg:scale-150 pt-16"  alt="pictures">
 		</div>
 	</div>
 </section>
-<section class="bg-light-blue p-6 rotate-7 lg:py-20">
+<section class="bg-light-blue p-6 lg:py-20">
 	<Heading htmlheading="h2" size="large" font="lilita-one" stylingclasses="text-center text-white pb-6">Get some inspiration here!</Heading>
 	<Heading htmlheading="h2" size="medium" font="open-sans" stylingclasses="text-center text-white">Take a look at some of the submissions from the past.</Heading>
 </section>
 <section class="mt-25 mx-auto w-full">
 	
 	<div class="grid grid-cols-2 gap-4 lg:relative lg:block lg:min-h-[600px]">
-		<img src="/forside_img/p_hjerte.svg" class="scale-115 lg:scale-170 lg:absolute lg:left-[5%] lg:top-[10%]" alt="">
+		<img src="/forside_img/p_hjerte.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-170 lg:absolute lg:left-[5%] lg:top-[10%]" alt="">
 		
-		<img src="/forside_img/p_rahim_noder.svg" class="scale-115 lg:scale-170 lg:absolute lg:left-[30%] lg:top-[6%]" alt="">
-		<img src="/forside_img/mad.svg" class="scale-115 lg:scale-165 lg:absolute lg:left-[53%] lg:top-[25%]" alt="">
+		<img src="/forside_img/p_rahim_noder.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-170 lg:absolute lg:left-[30%] lg:top-[6%]" alt="">
+		<img src="/forside_img/mad.svg" class="lg:hover:scale-180 duration-600 scale-115 lg:scale-165 lg:absolute lg:left-[53%] lg:top-[25%]" alt="">
 
-		<img src="/forside_img/megafon.svg" class="absolute -right-[4%] scale-80 lg:absolute lg:right-[0%] lg:-top-[16%] lg:scale-100 lg:z-10" alt="">
+		<img src="/forside_img/megafon.svg" class="absolute right-[-15%] top-[440%] scale-60 lg:absolute lg:right-[0%] lg:-top-[16%] lg:scale-100 lg:z-10" alt="">
 
-		<img src="/forside_img/festival.svg" class="scale-115 mt-20 lg:scale-170 lg:absolute lg:right-[10%] lg:top-[30%]" alt="">
+		<img src="/forside_img/festival.svg" class="lg:hover:scale-190 duration-600 scale-115 mt-20 lg:scale-170 lg:absolute lg:right-[10%] lg:top-[30%]" alt="">
 	
-		<img src="/forside_img/bryllup.svg" class="scale-115 lg:scale-170 lg:absolute lg:left-[17%] lg:top-[78%]" alt="">
-		<img src="/forside_img/alkohol.svg" class="scale-135 lg:scale-170 lg:absolute lg:right-[45%] lg:top-[80%]" alt="">
+		<img src="/forside_img/bryllup.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-170 lg:absolute lg:left-[17%] lg:top-[78%]" alt="">
+		<img src="/forside_img/alkohol.svg" class="lg:hover:scale-190 duration-600 scale-135 lg:scale-170 lg:absolute lg:right-[45%] lg:top-[80%]" alt="">
 	
-		<img src="/forside_img/kesi_plade.svg" class="scale-115 lg:scale-170 lg:absolute lg:right-[20%] lg:top-[120%]" alt="">
-		<img src="/forside_img/mouth.svg" class="scale-115 lg:scale-170 lg:absolute lg:right-[10%] lg:top-[100%]" alt="">
+		<img src="/forside_img/kesi_plade.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-170 lg:absolute lg:right-[20%] lg:top-[120%]" alt="">
+		<img src="/forside_img/mouth.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-170 lg:absolute lg:right-[10%] lg:top-[100%]" alt="">
 	
-		<img src="/forside_img/dj.svg" class="scale-115 lg:scale-180 lg:absolute lg:left-[10%] lg:top-[160%]" alt="">
-		<img src="/forside_img/klipklapper.svg" class="scale-115 lg:scale-180 lg:absolute lg:left-[32%] lg:top-[180%]" alt="">
+		<img src="/forside_img/dj.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-180 lg:absolute lg:left-[10%] lg:top-[160%]" alt="">
+		<img src="/forside_img/klipklapper.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-180 lg:absolute lg:left-[32%] lg:top-[180%]" alt="">
 	
-		<img src="/forside_img/redbull.svg" class="scale-115 lg:scale-170 lg:absolute lg:right-[32%] lg:top-[190%] lg:z-10" alt="">
-		<img src="/forside_img/par.svg" class="scale-115 mt-18 lg:scale-170 lg:absolute lg:right-[10%] lg:top-[200%] lg:z-10" alt="">
+		<img src="/forside_img/redbull.svg" class="lg:hover:scale-190 duration-600 scale-115 lg:scale-170 lg:absolute lg:right-[32%] lg:top-[190%] lg:z-10" alt="">
+		<img src="/forside_img/par.svg" class="lg:hover:scale-190 duration-600 scale-115 mt-18 lg:scale-170 lg:absolute lg:right-[10%] lg:top-[200%] lg:z-10" alt="">
 
-		<img src="/forside_img/hjerte_haand.svg" class="lg:scale-150 lg:absolute lg:right-[10%] lg:top-[170%] lg:z-0" alt="">
+		<img src="/forside_img/hjerte_haand.svg" class="absolute right-[-15%] top-[580%] lg:scale-150 lg:absolute lg:right-[10%] lg:top-[170%] lg:z-0" alt="">
 		
 	</div>
 </section>
