@@ -11,57 +11,143 @@ import Header from "../components/Header.astro";
 const target = "2025-10-18T00:00:00+02:00";
 ---
 <MainLayout title="Share your instant">
-    <Heading htmlheading="h2" size="large" font="lilita-one" stylingclasses="text-center mt-20 mb-10">Share your instant</Heading>
-    <form class="[&>div]:py-4 m-10 p-8 w-3xl mx-auto"> 
+    <Heading htmlheading="h2" size="large" font="lilita-one" stylingclasses="text-center mt-10 mb-10">Share your instant</Heading>
+
+    <form id="submission-form" class="relative [&>div]:py-4 m-4 p-6 w-full max-w-sm sm:max-w-md lg:max-w-4xl mx-auto"> 
     
         <div class="">
-            <label class="text-blue-500 font-semibold" for="text">Full Name:</label>
-            <div class="flex flex-row gap-4">
-                <input class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic" type="text" id="name" placeholder="First Name">
-                <input class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic" type="text" id="name" placeholder="Surname">
+            <label class="font-display text-ashy-black text-lg italic" for="text">Full Name:</label>
+            <div class="lg:flex lg:flex-row lg:gap-6 ">
+                <input class="mb-2 pl-2 rounded-lg mt-0 block lg:w-sm w-xs px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-orange italic" type="text" id="name" placeholder="First Name">
+                <input class="pl-2 rounded-lg mt-0 block lg:w-sm w-xs px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-orange italic" type="text" id="name" placeholder="Surname">
             </div>
         </div>
         <div class="">
-            <label class="text-blue-500 font-semibold" for="text">Email:</label>
-            <input class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic" type="text" id="name" placeholder="Email.contact@gmail.com">
+            <label class="font-display text-ashy-black text-lg" for="text">Email:</label>
+            <input class="pl-2 rounded-lg mt-0 block lg:w-sm w-xs px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0  focus:border-orange italic" type="text" id="name" placeholder="Email.contact@gmail.com">
         </div>
-        <div class="col-span-full">
-          <label for="cover-photo" class="block text-sm/6 font-medium text-gray-900">Cover photo</label>
-          <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+        <div class=" grid grid-cols-1 lg:grid-cols-2">
+        <div class="mb-8">
+          <label class="font-display text-ashy-black text-lg" for="text">Upload your photo:</label>
+          <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 w-xs lg:w-sm">
             <div class="text-center">
-              <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-12 text-gray-300">
-                <path d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" fill-rule="evenodd" />
-              </svg>
-              <div class="mt-4 flex text-sm/6 text-gray-600">
-                <label for="file-upload" class="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-600 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-600 hover:text-indigo-500">
+              
+                <img id="preview" src="/forside_img/cloud_picture.svg" alt="">
+              
+              <div class="mt-4 flex text-sm/6 text-gray-600 ">
+                <label for="file-upload" class="relative cursor-pointer rounded-md bg-transparent font-semibold text-orange focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-600 hover:text-indigo-500">
                   <span>Upload a file</span>
                   <input id="file-upload" type="file" name="file-upload" class="sr-only" />
                 </label>
                 <p class="pl-1">or drag and drop</p>
               </div>
-              <p class="text-xs/5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+              <p class="text-xs/5 text-gray-600">PNG, JPG, WEBP up to 10MB</p>
             </div>
           </div>
         </div>
-      </div>
+            <div class="">
+                <div class="mb-4">
+                    <label class="font-display text-ashy-black text-lg mb-2 block" for="text">Submission title:</label>
+                    <input  class="pl-2 rounded-lg mt-0 block lg:w-sm w-xs px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0  focus:border-orange italic"type="text" id="email" placeholder="Big weapon on a helmet?">
+                </div>
+                <div class="col-span-full">
+                <label class="font-display text-ashy-black text-lg mt-2" for="text">Submission Description:</label>
+                <div class="mt-2">
+                        <textarea id="about" name="about" rows="3" class="block lg:w-sm w-xs rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+      <input
+        class="rounded border-orange text-orange shadow-sm focus:border-orange focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50"
+        type="checkbox"
+        id="nyhedsbrev"
+      >
+      <span>I agree to the</span>
+
+      <!-- Åbn dialogen -->
+      <button type="button"
+              onclick="document.getElementById('terms').showModal()"
+              class="text-orange underline">
+        terms and conditions
+      </button>
     </div>
         <div class="">
-            <label class="text-blue-500 font-semibold" for="text">Submission title:</label>
-            <input  class="mt-0 block w-md px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black italic"type="text" id="email" placeholder="Big weapon on a helmet?">
+            <Button type="submit" variant="primary" size="medium">Submit</Button>
+                <p id="thank-you-message" class="text-green-600 font-semibold text-left hidden mt-4">✅ Thank you for submitting! <br> We can't wait to take look at your pictures!</p>
         </div>
-         <div class="col-span-full">
-          <label for="about" class="block text-sm/6 font-medium text-gray-900">Submission Description</label>
-          <div class="mt-2">
-            <textarea id="about" name="about" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
-          </div>
-        </div>
-        <div class="">
-            <input class="rounded border-blue-500 text-blue-500 shadow-sm focus:border-blue-500 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" id="nyhedsbrev">
-            <span>I agree to our</span>
-            <Link href="" variant="textlink" size="medium"> terms and conditions</Link>
-        </div>
-        <div class="">
-            <Link variant="primary" size="small">Submit</Link>
-        </div>
-    </form>
+
+  </form>
+
+<dialog id="terms" class="backdrop:bg-black/50 p-6 rounded-lg max-w-lg w-11/12 fixed inset-0 m-auto">
+    <h2 class="text-xl font-bold mb-4">Terms & Conditions</h2>
+    <div class="text-ashy-black mb-6">
+        <Text teksttype="konsultativ">By participating in the contest, you accept the following terms and conditions</Text> 
+        <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Participation</Heading>
+      <Text teksttype="konsultativ">The competition is open to all photographers, both amateurs and professionals, who are over 18 years old.</Text>
+      <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Instant photo</Heading>
+        <Text teksttype="konsultativ">Every submission has to be an analogue instant photo - not a digital montage made in a photo editing suite. The instant can be made in various ways, with analogue instant cameras, digital instant cameras like ie. the Fujifilm EVO or scan-and-print tools like ie. the Polaroid Lab. The instant photo can be manipulated with analogue processes - the organizers encourage instant photography experiments. The submission can depict the instant photo in many ways: As a flat scan without or without the instant photo frame, as a photo showing the instants in a frame, on the wall etc. The instant doesn’t need to be just one photo: It can be a panorama or collage of multiple instants that make up one submission. </Text>
+   <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Consent</Heading>
+   <Text teksttype="konsultativ">It is prohibited to upload photographs of people who have not given consent to the publication of the image. Images of people in private or embarrassing situations, regardless of whether they are photographed in a public place, are not allowed.</Text>
+    <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Legal Stuff</Heading>
+    <Text teksttype="konsultativ">The organizers reserve the right to disqualify any participant who violates these conditions. The organizers assume no responsibility for any loss, damage or injury that may arise as a result of participation in the competition or the use of prizes. Participants release the organizers from any claim, lawsuit or liability related to their participation in the competition.</Text>
+    <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Number of submissions</Heading>
+    <Text teksttype="konsultativ">You can enter the competition with a total of five submissions.</Text>
+    <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Usage rights</Heading>
+    <Text teksttype="konsultativ">By submitting one or more images and thereby participating in the competition, you agree that the image may be used for the promotion of the photo competition and possibly in physical exhibition spaces afterwards. The organizers will credit the participants wherever practical and reasonably possible.</Text>
+    <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Copyright</Heading>
+    <Text teksttype="konsultativ">You must be the author of the submitted instants and have the rights to publish them. The instants must be free of third party rights. Participants retain all copyright in their submitted instants. By submitting instants to the competition, participants grant the organizers a non-exclusive license to use, reproduce and publish the submitted images in connection with the promotion of the competition, including on social media platforms, websites and printed materials. The organizers will credit the participants wherever practical and reasonable.</Text>
+    <Heading htmlheading="h3" size="small" font="lilita-one" stylingclasses="mb-2">Announcement of Winners</Heading>
+    <Text teksttype="konsultativ">The winners of the competition will be announced on the official website and/or social media platforms of the organizers. By participating in the competition, the winners consent to the publication of their names and submitted photos for promotional purposes.</Text>
+    </div>
+
+    <div class="flex justify-end gap-2">
+      <button type="button"
+              class="px-4 py-2 bg-gray-200 rounded"
+              onclick="document.getElementById('terms').close()">
+        Close
+      </button>
+
+      <button type="button"
+              class="px-4 py-2 bg-orange text-white rounded"
+              onclick="document.getElementById('terms').close(); document.getElementById('nyhedsbrev').checked = true;">
+        Accept
+      </button>
+    </div>
+  </dialog>
+        
+
+    
+ <script is:client>
+  // Preview-funktionalitet
+  const fileInput = document.getElementById("file-upload");
+  const preview = document.getElementById("preview");
+
+  fileInput?.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) {
+      preview.src = URL.createObjectURL(file);
+    }
+  });
+
+  // Thank-you besked
+  const form = document.getElementById("submission-form");
+  const thankYou = document.getElementById("thank-you-message");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    thankYou.classList.remove("hidden");
+    form.reset(); // valgfrit: rydder felter
+  });
+</script>
+
+        <img src="/share_img/bottom_hoejre.svg" class="hidden lg:block absolute right-[5%] bottom-[-38%] lg:absolute lg:right-[12%] lg:bottom-[-22%]" alt="">
+        <img src="/share_img/bottom_venstre.svg" class="hidden lg:block absolute left-[5%] bottom-[-38%] lg:absolute lg:left-[10%] lg:bottom-[-22%]" alt="">
+        <img src="/share_img/top_hoejre.svg" class="hidden lg:block lg:absolute lg:right-[12%] top-[28%]" alt="">
+        <img src="/share_img/top_venstre.svg" class="hidden lg:block absolute left-[5%] top-[-30%] lg:absolute lg:left-[10%] top-[28%]" alt="">
+        <img src="/share_img/pointinghand.svg" class="absolute right-[12%] bottom-[-38%] rotate-[50deg] lg:absolute lg:left-[35%] lg:bottom-[-25%] lg:rotate-[30deg] animate-shake animate-infinite animate-duration-[4000ms] animate-ease-linear" alt="">
+        <img src="/share_img/hand_writing.svg" class="hidden lg:block lg:absolute lg:left-[10%] bottom-[-20%] lg:rotate-[10deg] lg:scale-70 animate-wiggle animate-infinite animate-duration-[2500ms] animate-ease-linear" alt="">
+   
 </MainLayout>
+
