@@ -69,13 +69,13 @@ const target = "2025-10-18T00:00:00+02:00";
       <!-- Åbn dialogen -->
       <button type="button"
               onclick="document.getElementById('terms').showModal()"
-              class="text-orange underline">
+              class="text-orange underline cursor-pointer ">
         terms and conditions
       </button>
     </div>
         <div class="">
             <Button type="submit" variant="primary" size="medium">Submit</Button>
-                <p id="thank-you-message" class="text-green-600 font-semibold text-left hidden mt-4">✅ Thank you for submitting! <br> We can't wait to take look at your pictures!</p>
+                <p id="thank-you-message" class="text-green-600 font-semibold text-left hidden mt-4">You’re an instant champ! Thanks for the contribution:-) <br> The competition runs until October 18. Shortly after, we will review all the images, and announce a winner on October 31. <br> If you’re one of the lucky winners or nominees, we will contact you by e-mail. <br> Good luck <br>NB! Want to make one more submission? Start the submission form over:-)</p>
         </div>
 
   </form>
@@ -116,7 +116,12 @@ const target = "2025-10-18T00:00:00+02:00";
       </button>
     </div>
   </dialog>
-        
+   
+  <script is:client>
+  if (window.location.hash === "#terms") {
+    document.getElementById("terms")?.showModal();
+  }
+</script>
 
     
  <script is:client>
@@ -146,7 +151,7 @@ const target = "2025-10-18T00:00:00+02:00";
         <img src="/share_img/bottom_venstre.svg" class="hidden lg:block absolute left-[5%] bottom-[-38%] lg:absolute lg:left-[10%] lg:bottom-[-22%]" alt="">
         <img src="/share_img/top_hoejre.svg" class="hidden lg:block lg:absolute lg:right-[12%] top-[28%]" alt="">
         <img src="/share_img/top_venstre.svg" class="hidden lg:block absolute left-[5%] top-[-30%] lg:absolute lg:left-[10%] top-[28%]" alt="">
-        <img src="/share_img/pointinghand.svg" class="absolute right-[12%] bottom-[-38%] rotate-[50deg] lg:absolute lg:left-[35%] lg:bottom-[-25%] lg:rotate-[30deg] animate-shake animate-infinite animate-duration-[4000ms] animate-ease-linear" alt="">
+        <img src="/share_img/pointinghand.svg" class="pointer-events-none absolute right-[12%] bottom-[-38%] rotate-[50deg] lg:absolute lg:left-[35%] lg:bottom-[-25%] lg:rotate-[30deg] animate-shake animate-infinite animate-duration-[4000ms] animate-ease-linear" alt="">
         <img src="/share_img/hand_writing.svg" class="hidden lg:block lg:absolute lg:left-[10%] bottom-[-20%] lg:rotate-[10deg] lg:scale-70 animate-wiggle animate-infinite animate-duration-[2500ms] animate-ease-linear" alt="">
    
 </MainLayout>
