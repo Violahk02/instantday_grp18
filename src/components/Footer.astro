@@ -3,12 +3,13 @@ import Text from "../components/Text.astro";
 ---
 <footer class="bg-primary-500 text-white">
     
-    <div class="container mx-auto mt-5 p-4 border-t-2 border-black grid grid-cols-2">
+    <div class="container mx-auto mt-5 p-4 border-t-2 border-black md:grid grid-cols-2">
         <div>
-            <div>
+            <div class="invisible md:visible">
                 <Text> Instant Day fejrer det analoge øjeblik <br>den 18. oktober deler vi verden i instant billeder.</Text>
             </div>
-            <div class="flex flex-row">
+            
+            <div class="md:flex flex-row">
                    <a href="https://www.ek.dk/" class="relative inline-block w-fit group">
                         <img
                             src="/public/info-img/EKlogo.svg"
@@ -21,16 +22,16 @@ import Text from "../components/Text.astro";
                             class="m-5 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
                         />
                     </a>
-                <img src="/logo.svg" alt="logo">    
+                <img src="/public/logo.svg" alt="logo">    
             </div>
         </div>
-        <div class="flex justify-end text-right">
+        <div class="lg:flex justify-end text-right">
                <ul>
-                    <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class=>Homepage</a></li>
-                    <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Share your instant</a></li>
+                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="/" class=>Homepage</a></li>
+                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Share your instant</a></li>
                 
-                    <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Winners & nominees</a></li>
-                    <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Info</a></li>
+                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Winners & nominees</a></li>
+                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Info</a></li>
                 </ul>
         </div>
     </div>
