@@ -1,38 +1,63 @@
 ---
 import Text from "../components/Text.astro";
 ---
+
 <footer class="bg-primary-500 text-white">
-    
-    <div class="container mx-auto mt-5 p-4 border-t-2 border-black md:grid grid-cols-2">
-        <div>
-            <div class="text-center lg:text-left">
-                <Text> Instant Day celebrates the analogue moment. <br> On October 18, we share the world in instant pictures.</Text>
-            </div>
-            
-            <div class="flex flex-col items-center lg::flex lg:flex-row">
-                   <a href="https://www.ek.dk/" class="relative inline-block w-fit group">
-                        <img
-                            src="/info-img/EKlogo.svg"
-                            alt="EK logo"
-                            class="m-5 transition-opacity duration-200 group-hover:opacity-0"
-                        />
-                        <img
-                            src="/info-img/EKlogohover.svg"
-                            alt="EK logo hover"
-                            class="m-5 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
-                        />
-                    </a>
-                <img src="/logo.svg" alt="logo">    
-            </div>
+  <div class="container mx-auto mt-5 p-4 border-t-2 border-black md:grid grid-cols-2">
+    <div>
+      <div class="text-center lg:text-left">
+        <Text>
+          Instant Day celebrates the analogue moment. <br />
+          On October 18, we share the world in instant pictures.
+        </Text>
+      </div>
+
+      <div class="flex flex-col items-center lg:flex lg:flex-row">
+        <a href="https://www.ek.dk/" class="relative inline-block w-fit group">
+          <img
+            src="/info-img/EKlogo.svg"
+            alt="EK logo"
+            class="m-5 transition-opacity duration-200 group-hover:opacity-0"
+          />
+          <img
+            src="/info-img/EKlogohover.svg"
+            alt="EK logo hover"
+            class="m-5 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+          />
+        </a>
+
+        <div id="logo" class="px-0 relative inline-block">
+          <a href="/" class="relative inline-block group">
+            <img
+              src="/logo.svg"
+              alt="logo"
+              class="transition-opacity duration-200 group-hover:opacity-0"
+            />
+            <img
+              src="/logohover.svg"
+              alt="logo hover"
+              class="absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+            />
+          </a>
         </div>
-        <div class="mt-8 text-center lg:flex lg:justify-end lg:text-right">
-               <ul>
-                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="/" class=>Homepage</a></li>
-                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Share your instant</a></li>
-                
-                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Winners & nominees</a></li>
-                    <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange"><a href="" class=>Info</a></li>
-                </ul>
-        </div>
+      </div>
     </div>
+
+    <div class="mt-8 text-center lg:flex lg:justify-end lg:text-right">
+      <ul>
+        <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange">
+          <a href="/">Homepage</a>
+        </li>
+        <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange">
+          <a href="">Share your instant</a>
+        </li>
+        <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange">
+          <a href="">Winners &amp; nominees</a>
+        </li>
+        <li class="font-lilita-one text-xl text-ashy-black px-12 hover:text-orange">
+          <a href="">Info</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </footer>
