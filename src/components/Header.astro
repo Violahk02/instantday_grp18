@@ -1,23 +1,46 @@
 ---
+// filepath: /Users/patrickcarlsen/Documents/kea/3. Sem/instantday_grp18/src/components/Header.astro
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
-<header x-data="{ showmenu: false }" class="" >
+<header x-data="{ showmenu: false }">
     <div id="navbar" class="fixed top-0 left-0 w-full z-50 bg-beige p-4 flex justify-center items-center">
         
         <nav id="desktopmenu" class="hidden lg:block ">
             <ul class="flex flex-row gap-4 items-center">
-                <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class={currentPath === "" ? "" : ""}>Homepage</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+                <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class={currentPath === "" ? "" : ""}>Homepage</a></li>
                 <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="/shareyourinstant" class={currentPath === "" ? "" : ""}>Share your instant</a></li>
-                <div id="logo" class=" px-8">
-            <img src="/logo.svg" alt="logo">
-        </div>
+                <div id="logo" class="px-0 relative inline-block group">
+                    <a href="/">
+                        <img
+                            src="/logo.svg"
+                            alt="logo"
+                            class="transition-opacity duration-200 group-hover:opacity-0"
+                        />
+                        <img
+                            src="/logohover.svg"
+                            alt="logo hover"
+                            class="absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+                        />
+                    </a>
+                </div>
                 <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="/winner" class={currentPath === "" ? "" : ""}>Winners & nominees</a></li>
                 <li class="font-display text-2xl text-ashy-black px-12 hover:text-orange"><a href="/info" class={currentPath === "" ? "" : ""}>Info</a></li>
             </ul>
         </nav>
-        <div id="logo" class="lg:hidden px-8">
-            <a href=""><img src="/logo.svg" alt="logo"></a>
+        <div id="logo" class="lg:hidden px-8 relative inline-block group">
+            <a href="/">
+                <img
+                    src="/logo.svg"
+                    alt="logo"
+                    class="transition-opacity duration-200 group-hover:opacity-0"
+                />
+                <img
+                    src="/logohover.svg"
+                    alt="logo hover"
+                    class="absolute top-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+                />
+            </a>
         </div>
         <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -27,13 +50,11 @@ const currentPath = pathname.slice(1); // remove the first "/"
     
     <nav id="mobilmenu" class=" bg-beige flex flex-col content-center" 
     x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-    
         <ul class="border-t-2 border-b-2 border-black">
-            <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class={currentPath === "" ? "" : ""}>Homepage</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Share your instant</a></li>
-                
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Winners & nominees</a></li>
-                <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Info</a></li>
+            <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="/" class={currentPath === "" ? "" : ""}>Homepage</a></li>
+            <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Share your instant</a></li>
+            <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Winners & nominees</a></li>
+            <li class="font-lilita-one text-2xl text-ashy-black px-12 hover:text-orange"><a href="" class={currentPath === "" ? "" : ""}>Info</a></li>
         </ul>
     </nav>
 </header>

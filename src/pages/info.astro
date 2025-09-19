@@ -1,64 +1,68 @@
 --- 
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
 ---
 
 <MainLayout>
- <section class="mx-auto text-center mb-20">
-    <Heading htmlheading="h1" size="xl-large" font="lilita-one">
-      THE JUDGES
-    </Heading>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 m-10">
-      <img src="/public/info-img/jonas.png" alt="Jonas Hasle" style="width: 100%; height: auto;" />
-      <img src="/public/info-img/stefan.png" alt="Stefan Grage" style="width: 100%; height: auto;" class="pt-30 pr-10 scale-170" />
-      <img src="/public/info-img/birgitte.png" alt="Birgitte Heide" style="width: 100%; height: auto;"/>
-      <img src="/public/info-img/anders.png" alt="Anders Dollerup" style="width: 100%; height: auto;" class="pt-10 pr-10 scale-130" />
+  <section class="grid grid-cols-2 lg:grid-cols-4 gap-10 m-10 items-center">
+    {/* Første række */}
+    <div class="flex flex-col items-center order-2 lg:order-1">
+      <img src="/info-img/jonas.png" alt="Jonas Hasle" />
     </div>
-  </section>
+    <div class="flex flex-col items-center order-3 lg:order-2 lg:size-120 lg:pr-10 lg:pb-150">
+      <img src="/info-img/stefan.png" alt="Stefan Grage" />
+    </div>
+    <div class="col-span-2 flex flex-col items-center justify-center order-1 lg:order-3 lg:col-span-2 lg:text-left lg:pl-35">
+      <Heading htmlheading="h1" size="xl-large" font="lilita-one">
+        THE JUDGES
+      </Heading>
+    </div>
 
-  <section class="m-10">
-    <Heading stylingclasses="text-center" htmlheading="h2" size="large" font="lilita-one">WHO ARE WE?</Heading>
-    <Text stylingclasses="max-w-3xl">
-      Instant Day is a small project run by a couple of lecturers from the Multimedia Design programme at EK - Business Academy Copenhagen. Instant Day is a bi-annual project where lecturers and students collaborate on a digital design and communication project related to the Instant Day competition (this website). In essence, we just want to promote instant photography and have fun while doing it. Cheers.
-    </Text>
-  </section>
-
-  <section class="m-10">
-    <Heading stylingclasses="text-center" htmlheading="h1" size="large" font="lilita-one" class="m-">THE JUDGES & SPONSORS</Heading>
-    <Text stylingclasses="text-left " htmlheading="h2" size=medium" font="lilita-one">Submissions will be reviewed by: <br>
-       <li class="pl-5"> Jonas Hasle (Assistant lecturer, Multimedia Design programme at EK)</li>
-      
-        <li class="pl-5">Anders Dollerup (Associate lecturer, Multimedia Design programme at EK)</li>
-    
-        <li class="pl-5">Birgitte Heide (Associate lecturer, Multimedia Design programme at EK)</li>
-        
-        <li class="pl-5">Stefan Grage (Associate lecturer, Multimedia Design programme at EK)</li>
-      
-        <li class="pl-5">Students on the Digital Design Elective on the Multimedia Design programme at KEA</li>
-    </Text>
-
-
-    <Text>
-      Instant Day is not affiliated to any companies within the Instant Photography industry.
-      The only organisation backing us is EK - Business Academy Copenhagen. <br />
-      At least so far ;-)
-    </Text>
-   <a href="https://www.ek.dk/" class="relative inline-block w-fit group">
-  <img
-    src="/public/info-img/EKlogo.svg"
-    alt="EK logo"
-    class="m-5 transition-opacity duration-200 group-hover:opacity-0"
-  />
-  <img
-    src="/public/info-img/EKlogohover.svg"
-    alt="EK logo hover"
-    class="m-5 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
-  />
-</a>
+    {/* Anden række */}
+    <div class="col-span-2 flex flex-col justify-center order-6 lg:order-4 lg:col-span-2">
+      <Heading stylingclasses="text-left" htmlheading="h2" size="large" font="lilita-one">
+        WHO ARE WE?
+      </Heading>
+      <Text stylingclasses="max-w-3xl mb-4">
+        Instant Day is a small project run by a couple of lecturers from the Multimedia Design programme at EK - Business Academy Copenhagen. Instant Day is a bi-annual project where lecturers and students collaborate on a digital design and communication project related to the Instant Day competition (this website). In essence, we just want to promote instant photography and have fun while doing it. Cheers.
+      </Text>
+      <Heading stylingclasses="text-left" htmlheading="h2" size="large" font="lilita-one">
+        THE JUDGES & SPONSORS
+      </Heading>
+      <Text stylingclasses="text-left mb-2">
+        Submissions will be reviewed by:
+      </Text>
+      <ul class="list-disc pl-5 mb-4">
+        <li>Jonas Hasle (Assistant lecturer, Multimedia Design programme at EK)</li>
+        <li>Anders Dollerup (Associate lecturer, Multimedia Design programme at EK)</li>
+        <li>Birgitte Heide (Associate lecturer, Multimedia Design programme at EK)</li>
+        <li>Stefan Grage (Associate lecturer, Multimedia Design programme at EK)</li>
+        <li>Students on the Digital Design Elective on the Multimedia Design programme at KEA</li>
+      </ul>
+      <Text>
+        Instant Day is not affiliated to any companies within the Instant Photography industry.
+        The only organisation backing us is EK - Business Academy Copenhagen. <br />
+        At least so far ;-)
+      </Text>
+      <a href="https://www.ek.dk/" class="relative inline-block w-fit group">
+        <img
+          src="/public/info-img/EKlogo.svg"
+          alt="EK logo"
+          class="m-5 transition-opacity duration-200 group-hover:opacity-0"
+        />
+        <img
+          src="/public/info-img/EKlogohover.svg"
+          alt="EK logo hover"
+          class="m-5 absolute top-0 left-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+        />
+      </a>
+    </div>
+    <div class="flex flex-col items-center order-4 lg:order-5">
+      <img src="/info-img/birgitte.png" alt="Birgitte Heide" />
+    </div>
+    <div class="flex flex-col items-center order-5 lg:order-6">
+      <img src="/info-img/anders.png" alt="Anders Dollerup" />
+    </div>
   </section>
 </MainLayout>
